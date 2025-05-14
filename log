@@ -79,3 +79,14 @@ sudoku.c:97:9: error: 'get_adj_nodes' defined but not used [-Werror=unused-funct
          ^~~~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 fb023e1
+Wed, May 14, 2025  8:52:04 AM: 
+ sudoku.c | 56 ++++----------------------------------------------------
+ 1 file changed, 4 insertions(+), 52 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:63:25: error: implicit declaration of function 'is_valid' [-Werror=implicit-function-declaration]
+                     if (is_valid(new_node)) {
+                         ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+542c550
