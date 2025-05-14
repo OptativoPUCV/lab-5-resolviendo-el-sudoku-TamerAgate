@@ -92,36 +92,29 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-    Stack* stack = createStack(); // Esto es tu List*
-    push(stack, copy(initial));   // Usamos pushBack desde tu push()
+    List* stack = createStack();
+    pushBack(stack, initial);
+    Node* current;
 
     while (!is_empty(stack)) {
-        Node* current = (Node*) top(stack); // Último elemento de la lista (stack)
-        pop(stack);                         // popBack desde tu pop()
+        current = (Node*) popBack(stack);
         (*cont)++;
 
         if (is_final(current)) {
-            return current; // No liberamos nada más, dejamos que el main lo haga
+            return current;
         }
 
-        List* adj = get_adj_nodes(current);
-        node* temp = adj->first;
-
+        List* adj_nodes = get_adj_nodes(current);
+        node* temp = adj_nodes->first;
         while (temp != NULL) {
-            Node* neighbor = (Node*) temp->data;
-            push(stack, copy(neighbor)); // Copiamos cada nodo antes de apilar
+            pushBack(stack, (Node*) temp->data);
             temp = temp->next;
         }
-
-        // Liberamos el nodo actual ya que no lo usaremos más
-        free(current);
-        free(adj); // Solo la estructura, no los nodos internos
+        clean(adj_nodes);
     }
 
     return NULL; // No se encontró solución
 }
-
-
 
 
 /*

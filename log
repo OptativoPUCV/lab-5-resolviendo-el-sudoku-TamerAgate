@@ -219,3 +219,25 @@ sudoku.c:113:24: error: request for member 'next' in something not a structure o
              temp = temp->next;
                         ^~
 20230ad
+Wed, May 14, 2025  9:03:33 AM: 
+ sudoku.c | 23 +++++++++--------------
+ 1 file changed, 9 insertions(+), 14 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:100:9: error: invalid use of void expression
+         current = (Node*) popBack(stack);
+         ^~~~~~~
+sudoku.c:108:9: error: unknown type name 'node'
+         node* temp = adj_nodes->first;
+         ^~~~
+sudoku.c:108:31: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+         node* temp = adj_nodes->first;
+                               ^~
+sudoku.c:110:41: error: request for member 'data' in something not a structure or union
+             pushBack(stack, (Node*) temp->data);
+                                         ^~
+sudoku.c:111:24: error: request for member 'next' in something not a structure or union
+             temp = temp->next;
+                        ^~
+e083271
