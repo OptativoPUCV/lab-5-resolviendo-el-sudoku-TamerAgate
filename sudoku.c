@@ -43,15 +43,62 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_valid(Node* n)
+{
+  int i,j,k,l;
+  int buscar[10];
 
-    return 1;
+  for (i = 0; i < 9; i++)
+  {
+    for (k = 0; k < 10; k++) buscar[k] = 0;
+    for (j = 0; j < 9; j++)
+    {
+      int num = n->sudo[i][j];
+      if (num != 0)
+      {
+        if (buscar[num]) return 0;
+        buscar[num] = 1;
+      }
+    }
+  }
+
+  for (j = 0; j < 9; j++)
+  {
+    for (k = 0; k < 10; k++) buscar[k] = 0;
+    for (i = 0; i < 9; i++)
+    {
+      int num = n->sudo[i][j];
+      if (num != 0)
+      {
+        if (buscar[num]) return 0;
+        buscar[num] = 1;
+      }
+    }
+  }
+
+  for (i = 0; i < 3; i++)
+  {
+      for (j= 0; j < 3; j++)
+      {
+        for (k = 0; k < 10; k++) buscar[k] = 0;
+        for (l = 0; l < 3; l++)
+        {
+          for (k = 0; k < 3; k++)
+          {
+            int num = n->sudo[i*3+l][j*3+k];
+            if (num != 0)
+            {
+              if (buscar[num]) return 0;
+              buscar[num] = 1;
+            }
+          }
+        }
+      }
+  }
 }
-
-
-List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+List* get_adj_nodes(Node* n)
+{
+    
 }
 
 

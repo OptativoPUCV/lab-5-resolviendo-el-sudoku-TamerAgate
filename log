@@ -8,3 +8,18 @@ Wed, May 14, 2025  8:26:16 AM:
  tests:  1|4
 total_score: 10/70
 52c281b
+Wed, May 14, 2025  8:43:11 AM: 
+ sudoku.c | 57 ++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 52 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:98:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:102:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+6b25a29
