@@ -76,26 +76,24 @@ int is_valid(Node* n)
     }
   }
 
-  for (i = 0; i < 3; i++)
-  {
-      for (j= 0; j < 3; j++)
-      {
+  for (i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
         for (k = 0; k < 10; k++) buscar[k] = 0;
-        for (l = 0; l < 3; l++)
-        {
-          for (k = 0; k < 3; k++)
-          {
-            int num = n->sudo[i*3+l][j*3+k];
-            if (num != 0)
-            {
-              if (buscar[num]) return 0;
-              buscar[num] = 1;
+        for (l = 0; l < 3; l++) {
+            for (int m = 0; m < 3; m++) { // Cambiar k por m
+                int num = n->sudo[i * 3 + l][j * 3 + m];
+                if (num != 0) {
+                    if (buscar[num]) return 0;
+                    buscar[num] = 1;
+                }
             }
-          }
         }
-      }
+    }
   }
+  
 }
+
+
 List* get_adj_nodes(Node* n)
 {
     
