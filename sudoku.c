@@ -92,8 +92,6 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-  Node* DFS(Node* initial, int* cont)
-  {
     Stack* stack = createStack(); // Esto es tu List*
     push(stack, copy(initial));   // Usamos pushBack desde tu push()
 
@@ -121,10 +119,8 @@ Node* DFS(Node* initial, int* cont)
     }
 
     return NULL; // No se encontró solución
-  }
-
-
 }
+
 
 
 
