@@ -388,3 +388,9 @@ sudoku.c:81:5: note: previous definition of 'is_final' was here
  int is_final(Node* n)
      ^~~~~~~~
 d8510ee
+Wed, May 14, 2025  9:11:54 AM: 
+ sudoku.c | 162 ---------------------------------------------------------------
+ 1 file changed, 162 deletions(-)
+ tests:  3|3
+total_score: 25/70
+eb8bdb3
