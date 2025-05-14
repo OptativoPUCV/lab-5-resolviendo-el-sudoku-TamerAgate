@@ -45,10 +45,9 @@ void print_node(Node* n){
 
 int is_valid(Node* n)
 {
-      int i, j, k;
+    int i, j, k;
     int seen[10];
 
-    // Verificar filas
     for (i = 0; i < 9; i++) {
         for (k = 0; k < 10; k++) seen[k] = 0;
         for (j = 0; j < 9; j++) {
@@ -60,7 +59,6 @@ int is_valid(Node* n)
         }
     }
 
-    // Verificar columnas
     for (j = 0; j < 9; j++) {
         for (k = 0; k < 10; k++) seen[k] = 0;
         for (i = 0; i < 9; i++) {
@@ -72,7 +70,6 @@ int is_valid(Node* n)
         }
     }
 
-    // Verificar subcuadrículas 3x3
     for (int boxRow = 0; boxRow < 3; boxRow++) {
         for (int boxCol = 0; boxCol < 3; boxCol++) {
             for (k = 0; k < 10; k++) seen[k] = 0;
