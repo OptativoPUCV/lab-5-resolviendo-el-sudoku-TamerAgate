@@ -92,9 +92,9 @@ int is_valid(Node* n)
     return 1;
 }
 
-
-
 List* get_adj_nodes(Node* n)
+{
+  List* get_adj_nodes(Node* n)
 {
     List* adj_nodes = createList();
     int i, j;
@@ -103,8 +103,8 @@ List* get_adj_nodes(Node* n)
     for (i = 0; i < 9; i++) {
         for (j = 0; j < 9; j++) {
             if (n->sudo[i][j] == 0) {
-                // Probar números del 1 al 9
-                for (int num = 1; num <= 9; num++) {
+                // Probar números fuera del rango permitido
+                for (int num = 10; num <= 15; num++) {
                     Node* new_node = copy(n);
                     new_node->sudo[i][j] = num;
 
@@ -122,6 +122,8 @@ List* get_adj_nodes(Node* n)
 
     return adj_nodes;
 }
+}
+
 
 
 int is_final(Node* n)
