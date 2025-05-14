@@ -241,3 +241,81 @@ sudoku.c:111:24: error: request for member 'next' in something not a structure o
              temp = temp->next;
                         ^~
 e083271
+Wed, May 14, 2025  9:10:00 AM: 
+ sudoku.c | 173 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 156 insertions(+), 17 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c:104:2: error: conflicting types for 'Node'
+ }Node;
+  ^~~~
+In file included from test.c:5:0:
+sudoku.c:8:2: note: previous declaration of 'Node' was here
+ }Node;
+  ^~~~
+In file included from test.c:5:0:
+sudoku.c:106:7: error: conflicting types for 'createNode'
+ Node* createNode(){
+       ^~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:10:7: note: previous definition of 'createNode' was here
+ Node* createNode(){
+       ^~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:111:7: error: conflicting types for 'copy'
+ Node* copy(Node* n){
+       ^~~~
+In file included from test.c:5:0:
+sudoku.c:15:7: note: previous definition of 'copy' was here
+ Node* copy(Node* n){
+       ^~~~
+In file included from test.c:5:0:
+sudoku.c:117:7: error: conflicting types for 'read_file'
+ Node* read_file (char* file_name){
+       ^~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:21:7: note: previous definition of 'read_file' was here
+ Node* read_file (char* file_name){
+       ^~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:132:6: error: conflicting types for 'print_node'
+ void print_node(Node* n){
+      ^~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:36:6: note: previous definition of 'print_node' was here
+ void print_node(Node* n){
+      ^~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:142:5: error: conflicting types for 'is_valid'
+ int is_valid(Node* n)
+     ^~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:46:5: note: previous definition of 'is_valid' was here
+ int is_valid(Node* n)
+     ^~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:177:7: error: conflicting types for 'get_adj_nodes'
+ List* get_adj_nodes(Node* n)
+       ^~~~~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:52:7: note: previous definition of 'get_adj_nodes' was here
+ List* get_adj_nodes(Node* n)
+       ^~~~~~~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:206:5: error: conflicting types for 'is_final'
+ int is_final(Node* n)
+     ^~~~~~~~
+In file included from test.c:5:0:
+sudoku.c:81:5: note: previous definition of 'is_final' was here
+ int is_final(Node* n)
+     ^~~~~~~~
+test.c: In function 'test_dfs':
+test.c:206:19: error: implicit declaration of function 'DFS' [-Werror=implicit-function-declaration]
+     Node* final = DFS(initial, &cont);
+                   ^~~
+test.c:206:19: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:230:11: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     final = DFS(initial, &cont);
+           ^
+cc1.exe: all warnings being treated as errors
+88d137d
