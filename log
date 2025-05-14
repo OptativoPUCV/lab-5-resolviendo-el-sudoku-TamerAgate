@@ -122,3 +122,13 @@ sudoku.c:118:1: error: control reaches end of non-void function [-Werror=return-
  ^
 cc1.exe: all warnings being treated as errors
 93e5c22
+Wed, May 14, 2025  8:58:09 AM: 
+ sudoku.c | 27 +++++++++++----------------
+ 1 file changed, 11 insertions(+), 16 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:105:17: error: void value not ignored as it ought to be
+     while ((adj = popFront(adj_nodes)) != NULL) {
+                 ^
+83d53e9
