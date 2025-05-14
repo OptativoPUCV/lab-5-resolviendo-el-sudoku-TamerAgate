@@ -105,9 +105,13 @@ Node* DFS(Node* initial, int* cont)
     while ((adj = popFront(adj_nodes)) != NULL) {
         result = DFS(adj, cont);
         if (result != NULL) {
+            freeList(adj_nodes);
             return result;
         }
+        free(adj);
     }
+
+    freeList(adj_nodes);
 
     return NULL;
 }

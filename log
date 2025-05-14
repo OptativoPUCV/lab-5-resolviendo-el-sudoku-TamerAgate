@@ -132,3 +132,17 @@ sudoku.c:105:17: error: void value not ignored as it ought to be
      while ((adj = popFront(adj_nodes)) != NULL) {
                  ^
 83d53e9
+Wed, May 14, 2025  8:58:28 AM: 
+ sudoku.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:105:17: error: void value not ignored as it ought to be
+     while ((adj = popFront(adj_nodes)) != NULL) {
+                 ^
+sudoku.c:108:13: error: implicit declaration of function 'freeList' [-Werror=implicit-function-declaration]
+             freeList(adj_nodes);
+             ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+0b2e4ce
