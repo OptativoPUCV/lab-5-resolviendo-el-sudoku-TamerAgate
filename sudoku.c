@@ -91,7 +91,7 @@ int is_valid(Node* n)
 List* get_adj_nodes(Node* n)
 {
     List* adj_nodes = createList();
-    
+
     int i, j;
 
     for (i = 0; i < 9; i++) {
@@ -129,7 +129,31 @@ int is_final(Node* n)
 
 Node* DFS(Node* initial, int* cont)
 {
-  return NULL;
+    Stack* stack = createStack();
+    push(stack, initial);
+
+    while (!is_empty(stack))
+    {
+        Node* current = top(stack);
+        pop(stack);
+        (*cont)++;
+
+        if (is_final(current))
+        {
+            return current;
+        }
+
+        List* adj_nodes = get_adj_nodes(current);
+        Node* next_node = first(adj_nodes);
+
+        while (next_node != NULL)
+        {
+            push(stack, next_node);
+            next_node = next(adj_nodes);
+        }
+    }
+
+    return NULL;
 }
 
 
